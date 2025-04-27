@@ -1,1 +1,11 @@
-<p>nav-bar works!</p>
+<div class="navbar">
+  <section class="logo">
+    <img [src]="images.logo" class="logo_img"/>
+  </section>
+  <section class="navigation">
+    <app-page-button [routePath]="['/characters']" title="Characters"></app-page-button>
+    <app-page-button [routePath]="['/episodes']" title="Episodes"></app-page-button>
+    <app-page-button [routePath]="['/locations']" title="Locations"></app-page-button>
+    <button class="theme" (click)="changeTheme()" [ngStyle]="{'background-image': 'url(' + themeIcon + ')'}"></button>
+  </section>
+</div>
