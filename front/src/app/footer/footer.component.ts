@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {images} from '../../../public/images/images';
 
 @Component({
   selector: 'app-footer',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  protected readonly images = images;
 }

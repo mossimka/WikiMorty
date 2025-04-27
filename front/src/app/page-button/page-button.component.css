@@ -1,0 +1,15 @@
+button{
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 2rem;
+  padding: 2vh;
+  font-family: "Dela Gothic One", sans-serif;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover{
+  box-shadow: var(--green-shadow);
+  text-shadow: var(--green-shadow);
+}

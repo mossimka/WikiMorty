@@ -1,0 +1,28 @@
+:host{
+  display: block;
+  min-height: 32vh;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/background-main.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+
+.info article {
+  padding: 2rem;
+  width: 70%;
+  background-color: var(--bg-85-color);
+  border: 1px solid var(--bg-color);
+  border-radius: 2rem;
+}
+.info article h2{
+  text-align: center;
+  text-shadow: var(--green-shadow);
+}

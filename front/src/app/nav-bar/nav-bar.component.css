@@ -23,6 +23,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: var(--bg-color);
   border: none;
   cursor: pointer;
   border-radius: 50%;

@@ -1,2 +1,21 @@
-<p>main works!</p>
-<app-page-button></app-page-button>
+<section class="info">
+  <article>
+    <h2>Hey, you!</h2>
+    <p>
+      Yes, you, with your eyes full of existential dread and thirst for adventure
+      (or just looking for what episode Mr. Poopy Butt was in)! You've come to Wiki & Morty
+      - an encyclopedia dedicated to the animated series Rick and Morty.
+    </p>
+    <p>
+      Our goal is to collect the most accurate and detailed information about all aspects of the series:
+    </p>
+    <p>
+    Characters: From the main characters to single-episode creatures.
+    Episodes: Synopses, interesting facts, cultural references.
+    Locations: Descriptions of planets, dimensions, and other locations.
+    </p>
+  </article>
+</section>
+<app-page-button [routePath]="['/characters']" title="Characters"></app-page-button>
+<app-page-button [routePath]="['/episodes']" title="Episodes"></app-page-button>
+<app-page-button [routePath]="['/locations']" title="Locations"></app-page-button>

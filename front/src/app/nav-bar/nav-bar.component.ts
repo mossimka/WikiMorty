@@ -18,7 +18,7 @@ export class NavBarComponent {
   currentTheme: 'light' | 'dark' = 'light';
 
   get themeIcon() {
-    return this.currentTheme === 'light' ? this.images.dark : this.images.light;
+    return this.currentTheme === 'light' ? this.images.light : this.images.dark;
   }
 
    changeTheme() {
