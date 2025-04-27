@@ -10,12 +10,18 @@
       Our goal is to collect the most accurate and detailed information about all aspects of the series:
     </p>
     <p>
-    Characters: From the main characters to single-episode creatures.
-    Episodes: Synopses, interesting facts, cultural references.
+    Characters: From the main characters to single-episode creatures.<br>
+    Episodes: Synopses, interesting facts, cultural references.<br>
     Locations: Descriptions of planets, dimensions, and other locations.
     </p>
   </article>
 </section>
-<app-page-button [routePath]="['/characters']" title="Characters"></app-page-button>
-<app-page-button [routePath]="['/episodes']" title="Episodes"></app-page-button>
-<app-page-button [routePath]="['/locations']" title="Locations"></app-page-button>
+
+<section class="pages">
+  <h2>Discover Our Universe:</h2>
+  <div class="pages-div">
+    <button class="pages-button" [routerLink]="['/characters']" id="characters">Characters</button>
+    <button class="pages-button" [routerLink]="['/episodes']" id="episodes">Episodes</button>
+    <button class="pages-button" [routerLink]="['/locations']" id="locations">Locations</button>
+  </div>
+</section>

@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import {images} from '../../../public/images/images'
 import {PageButtonComponent} from '../page-button/page-button.component';
 import {NgStyle} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   imports: [
     PageButtonComponent,
-    NgStyle
+    NgStyle,
+    RouterLink
   ],
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']

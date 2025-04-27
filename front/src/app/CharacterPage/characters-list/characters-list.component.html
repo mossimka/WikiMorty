@@ -1,1 +1,40 @@
-<p>characters-list works!</p>
+<h2>Characters</h2>
+
+<ng-container *ngIf="charactersResponse$ | async as response; else loadingOrError" class="list">
+  <div class="character-list">
+    <app-character-card
+      *ngFor="let character of response.results"
+      [character]="character">  </app-character-card>
+  </div>
+
+  <div class="pagination" *ngIf="response.info.pages > 1">
+    <button [disabled]="!response.info.prev"
+      (click)="goToPage(1)">
+      First
+    </button>
+    <button
+      [disabled]="!response.info.prev"
+      (click)="goToPage(currentPage - 1)">
+      Previous
+    </button>
+    <span>Page {{ currentPage }} of {{ response.info.pages }}</span>
+    <button
+      [disabled]="!response.info.next"
+      (click)="goToPage(currentPage + 1)">
+      Next
+    </button>
+    <button
+      [disabled]="!response.info.next"
+      (click)="goToPage(totalPages)">
+      Last
+    </button>
+  </div>
+
+  <div *ngIf="response.results.length === 0">
+       No characters found.
+  </div>
+</ng-container>
+
+<ng-template #loadingOrError>
+  <p>Loading characters...</p>
+</ng-template>

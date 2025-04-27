@@ -9,7 +9,7 @@ router = APIRouter(
 
 @router.get("/")
 async def get_characters_list(
-        page: int = Query(1, ge=1, description="Page number"),
+        page: int = Query(None, ge=1, description="Page number"),
         name: Optional[str] = Query(None, description="Filter by name"),
         status: Optional[str] = Query(None, description="Filter by status (Alive, Dead, unknown)"),
         species: Optional[str] = Query(None, description="Filter by species"),
@@ -25,7 +25,7 @@ async def get_characters_list(
 
     return await fetch_from_external_api("character", params=params)
 
-@router.get("/{character_id}") # Путь относительно префикса -> /api/characters/{character_id}
+@router.get("/{character_id}")
 async def get_character_by_id(
         character_id: int = Path(..., ge=1, description="The ID of the character to get")
 ):

@@ -1,1 +1,8 @@
-<p>character-card works!</p>
+<div class="character-card" *ngIf="character"> <img [src]="character.image" [alt]="character.name">
+  <h3>{{ character.name }}</h3>
+  <p>Status: {{ character.status }}</p>
+  <p>Species: {{ character.species }}</p>
+  <button type="button" class="details-button" [routerLink]="['/characters', character.id]">
+    View Details
+  </button>
+</div>

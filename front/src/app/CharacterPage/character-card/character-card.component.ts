@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Character } from '../../interfaces/character';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-character-card',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './character-card.component.html',
-  styleUrl: './character-card.component.css'
+  styleUrls: ['./character-card.component.css']
 })
 export class CharacterCardComponent {
+  @Input() character!: Character;
 
+  constructor() { }
 }

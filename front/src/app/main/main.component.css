@@ -26,3 +26,49 @@
   text-align: center;
   text-shadow: var(--green-shadow);
 }
+
+.pages{
+  margin: 4vh 0;
+  text-align: center;
+}
+.pages-div{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.pages-button{
+  width: 22vw;
+  height: 25vw;
+  border-radius: 2rem;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 2rem;
+  color: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.pages-button:hover{
+  box-shadow: var(--green-shadow);
+  text-shadow: var(--green-shadow);
+}
+
+#characters{
+  background-image: url('/images/background-characters.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#episodes{
+  background-image: url('/images/background-episodes.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#locations{
+  background-image: url('/images/background-locations.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+

@@ -1,0 +1,39 @@
+:host{
+  display: block;
+  min-height: 32vh;
+}
+
+.list{
+  width: 100%;
+}
+
+.character-list{
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pagination{
+  margin: 0 auto;
+  width: 35vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination button{
+  background-color: var(--primary-color);
+  box-shadow: var(--light-shadow);
+  border-radius: 4px;
+  border: none;
+  width: 6vw;
+  padding: 0.5vh;
+  font-size: 0.7rem;
+  font-family: "Dela Gothic One", sans-serif;
+  cursor: pointer;
+}
+
+.pagination button:hover{
+  box-shadow: var(--green-shadow);
+  text-shadow: var(--green-shadow);
+}

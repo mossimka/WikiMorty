@@ -1,1 +1,43 @@
-<p>character-details works!</p>
+<div class="container">
+  <ng-container *ngIf="character$ | async as character; else loadingOrError">
+    <h1>{{ character.name }}</h1>
+    <div class="details">
+      <div class="image-container">
+        <img [src]="character.image" [alt]="character.name">
+      </div>
+      <div class="info">
+         <h2>Details</h2>
+         <ul>
+           <li><strong>Status:</strong> <span class="status-{{character.status | lowercase}}">{{ character.status }}</span></li>
+           <li><strong>Species:</strong> {{ character.species }}</li>
+           <li *ngIf="character.type"><strong>Type:</strong> {{ character.type }}</li>
+           <li><strong>Gender:</strong> {{ character.gender }}</li>
+           <li><strong>Origin:</strong> {{ character.origin.name }}</li>
+           <li><strong>Last Known Location:</strong> {{ character.location.name }}</li>
+           <li><strong>Appears in:</strong> {{ character.episode.length }} episode(s)</li>
+           <li><strong>Created:</strong> {{ character.created | date:'longDate' }}</li>
+         </ul>
+       </div>
+    </div>
+
+    <div class="episodes-section" *ngIf="character.episode && character.episode.length > 0">
+      <h2>Appears in Episodes</h2>
+      <ul>
+        <li *ngFor="let episodeUrl of character.episode">
+          <a [href]="episodeUrl" target="_blank" rel="noopener noreferrer">
+            Episode {{ episodeUrl.split('/').pop() }}
+          </a>
+          </li>
+      </ul>
+    </div>
+    </ng-container>
+
+  <ng-template #loadingOrError>
+    <div *ngIf="loadingError" class="error-message">
+      <p>Could not load character details. The character may not exist or there was a network error.</p>
+    </div>
+    <div *ngIf="!loadingError">
+      <p>Loading character details...</p>
+    </div>
+  </ng-template>
+</div>
