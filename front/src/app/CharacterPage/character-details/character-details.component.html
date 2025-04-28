@@ -8,7 +8,7 @@
       <div class="info">
          <h2>Details</h2>
          <ul>
-           <li><strong>Status:</strong> <span class="status-{{character.status | lowercase}}">{{ character.status }}</span></li>
+           <li><strong>Status:</strong> <span class="status-{{character.status | lowercase}}"> {{ character.status }}</span></li>
            <li><strong>Species:</strong> {{ character.species }}</li>
            <li *ngIf="character.type"><strong>Type:</strong> {{ character.type }}</li>
            <li><strong>Gender:</strong> {{ character.gender }}</li>

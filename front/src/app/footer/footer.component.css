@@ -33,6 +33,7 @@ footer a {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 .social-links-div {
   display: flex;

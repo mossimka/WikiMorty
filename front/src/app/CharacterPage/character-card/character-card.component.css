@@ -1,4 +1,4 @@
-.character-card {
+.episode-card {
   width: 15vw;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -14,12 +14,12 @@
   cursor: pointer;
 }
 
-.character-card:hover {
+.episode-card:hover {
   transform: scale(1.01);
   box-shadow: var(--green-shadow);
 }
 
-.character-card img {
+.episode-card img {
   max-width: 100%;
   height: auto;
   border-radius: 50%;
@@ -29,14 +29,14 @@
   object-fit: cover;
 }
 
-.character-card h3 {
+.episode-card h3 {
   margin-top: 0;
   margin-bottom: 5px;
   font-size: 1.2em;
   color: #333;
 }
 
-.character-card p {
+.episode-card p {
   margin: 3px 0;
   font-size: 0.9em;
   color: #555;

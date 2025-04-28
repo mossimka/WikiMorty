@@ -3,6 +3,10 @@
   min-height: 32vh;
 }
 
+.page-name{
+  margin: 0 43vw;
+}
+
 .list{
   width: 100%;
 }

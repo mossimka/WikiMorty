@@ -1,1 +1,25 @@
-<p>episodes-list works!</p>
+<h2>Episodes</h2>
+
+<ng-container *ngIf="episodeResponse$ | async as response; else loadingOrError" class="list">
+  <div class="episode-list"> <app-episode-card
+      *ngFor="let episode of response.results"
+      [episode]="episode"> </app-episode-card>
+  </div>
+
+  <div class="pagination" *ngIf="response.info.pages > 1">
+    <button [disabled]="currentPage === 1" (click)="goToPage(1)">First</button>
+    <button [disabled]="!response.info.prev" (click)="goToPage(currentPage - 1)">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button [disabled]="!response.info.next" (click)="goToPage(currentPage + 1)">Next</button>
+    <button [disabled]="currentPage === totalPages" (click)="goToPage(totalPages)">Last</button>
+  </div>
+
+  <div *ngIf="response.results.length === 0">
+       No episodes found.
+  </div>
+
+</ng-container>
+
+<ng-template #loadingOrError>
+  <p>Loading episodes...</p>
+</ng-template>
