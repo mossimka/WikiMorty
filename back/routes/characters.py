@@ -26,7 +26,5 @@ async def get_characters_list(
     return await fetch_from_external_api("character", params=params)
 
 @router.get("/{character_id}")
-async def get_character_by_id(
-        character_id: int = Path(..., ge=1, description="The ID of the character to get")
-):
+async def get_character_by_id(character_id: int):
     return await fetch_from_external_api(f"character/{character_id}")

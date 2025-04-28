@@ -1,1 +1,41 @@
-<p>locations-list works!</p>
+<h2 class="page-name">Locations</h2>
+
+<ng-container *ngIf="locationsResponse$ | async as response; else loadingOrError" class="list">
+
+  <div class="locations-list">
+    <app-location-card
+      *ngFor="let location of response.results"
+      [location]="location"> </app-location-card>
+  </div>
+
+  <div class="pagination" *ngIf="response.info && response.info.pages > 1">
+    <button [disabled]="currentPage === 1"
+            (click)="goToPage(1)">
+      First
+    </button>
+    <button [disabled]="currentPage === 1"
+            (click)="goToPage(currentPage - 1)">
+      Previous
+    </button>
+    <span>Page {{ currentPage }} of {{ response.info.pages }}</span>
+    <button [disabled]="currentPage === totalPages"
+            (click)="goToPage(currentPage + 1)">
+      Next
+    </button>
+    <button [disabled]="currentPage === totalPages"
+            (click)="goToPage(totalPages)">
+      Last
+    </button>
+  </div>
+
+  <div *ngIf="response.results.length === 0" class="no-results">
+       No locations found.
+  </div>
+</ng-container>
+
+<ng-template #loadingOrError>
+  <div class="loading-container">
+    <p>Loading locations...</p>
+    <div class="loader"></div>
+   </div>
+</ng-template>

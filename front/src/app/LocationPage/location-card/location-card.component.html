@@ -1,1 +1,12 @@
-<p>location-card works!</p>
+<ng-container *ngIf="location">
+  <div class="location-card">
+    <h3>{{ location.name }}</h3>
+    <div class="details">
+      <p><strong>Type:</strong> {{ location.type || 'Unknown' }}</p>
+      <p><strong>Residents:</strong> {{ location.residents?.length || 0 }}</p>
+    </div>
+    <button type="button" class="details-button" [routerLink]="['/locations', location.id]">
+      View Details
+    </button>
+  </div>
+</ng-container>

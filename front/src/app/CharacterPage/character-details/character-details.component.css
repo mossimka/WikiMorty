@@ -80,7 +80,7 @@ h1 {
   font-weight: bold;
 }
 
-.characters-section ul{
+.episodes-section ul{
   list-style: none;
   padding: 0;
   margin: 0;
@@ -89,23 +89,23 @@ h1 {
   gap: 15px;
 }
 
-.characters-section ul li{
+.episodes-section ul li{
   background-color: var(--bg-color);
   border-radius: 4px;
   text-align: center;
   border: 1px solid #eeeeee;
   padding: 1rem;
 }
-.characters-section ul li:hover{
+.episodes-section ul li:hover{
   box-shadow: var(--green-shadow);
   text-shadow: var(--green-shadow);
 }
-.characters-section ul li a{
+.episodes-section ul li a{
   color: var(--primary-color);
   border-radius: 4px;
   padding: 0.5rem;
 }
-.characters-section ul li a:hover{
+.episodes-section ul li a:hover{
   box-shadow: none;
 }
 

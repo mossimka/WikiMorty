@@ -3,13 +3,8 @@
   min-height: 32vh;
 }
 
-:host{
-  display: block;
-  min-height: 32vh;
-}
-
 .page-name{
-  margin: 0 43vw;
+  margin: 4vh 43vw;
 }
 
 .list{
@@ -24,7 +19,7 @@
 }
 
 .pagination{
-  margin: 0 auto;
+  margin: 4vh auto;
   width: 35vw;
   display: flex;
   justify-content: space-between;

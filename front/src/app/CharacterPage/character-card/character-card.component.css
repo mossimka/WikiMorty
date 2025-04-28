@@ -1,4 +1,4 @@
-.episode-card {
+.character-card {
   width: 15vw;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -11,15 +11,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   cursor: pointer;
+  min-height: 40vh;
 }
 
-.episode-card:hover {
+.character-card:hover {
   transform: scale(1.01);
   box-shadow: var(--green-shadow);
 }
 
-.episode-card img {
+.character-card img {
   max-width: 100%;
   height: auto;
   border-radius: 50%;
@@ -29,17 +31,17 @@
   object-fit: cover;
 }
 
-.episode-card h3 {
+.character-card h3 {
   margin-top: 0;
   margin-bottom: 5px;
   font-size: 1.2em;
-  color: #333;
+  color: var(--text-color);
 }
 
-.episode-card p {
+.character-card p {
   margin: 3px 0;
   font-size: 0.9em;
-  color: #555;
+  color: var(--text-color);
 }
 
 .details-button{
@@ -52,6 +54,7 @@
   font-size: 0.7rem;
   font-family: "Dela Gothic One", sans-serif;
   cursor: pointer;
+  color: var(--text-color);
 }
 
 .details-button:hover{

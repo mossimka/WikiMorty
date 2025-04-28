@@ -1,0 +1,54 @@
+.location-card {
+  width: 15vw;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  background-color: var(--bg-color);
+  box-shadow: var(--light-shadow);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  min-height: 30vh;
+}
+
+.location-card:hover {
+  transform: scale(1.01);
+  box-shadow: var(--green-shadow);
+}
+
+.location-card h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+.location-card p {
+  margin: 3px 0;
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+.details-button{
+  background-color: var(--primary-color);
+  box-shadow: var(--light-shadow);
+  border-radius: 4px;
+  border: none;
+  width: 6vw;
+  padding: 0.5vh;
+  font-size: 0.7rem;
+  font-family: "Dela Gothic One", sans-serif;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.details-button:hover{
+  box-shadow: var(--green-shadow);
+  text-shadow: var(--green-shadow);
+}
+

@@ -23,7 +23,6 @@ export class CharacterDetailsComponent implements OnInit {
 
   character$!: Observable<Character | null>;
   loadingError = false;
-
   ngOnInit(): void {
     this.character$ = this.route.paramMap.pipe(
       switchMap(params => {
