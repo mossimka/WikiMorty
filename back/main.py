@@ -11,7 +11,7 @@ origins = [
     "http://localhost:4200",
     "http://127.0.0.1:4200",
     "https://nfactorial2-24pj6b3nn-mossimkas-projects.vercel.app",
-    "https://nfactorial2-iota.vercel.app/"
+    "https://nfactorial2-iota.vercel.app"
 ]
 app.add_middleware(
     CORSMiddleware,
