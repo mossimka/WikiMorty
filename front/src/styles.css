@@ -13,6 +13,7 @@ body.light {
   --green-shadow: 0 0 0.5rem var(--shadow-color);
   --light-shadow: 0 0 5px rgba(0,0,0,0.1);
   --bg-85-color: rgba(255, 255, 255, 0.85);
+  --text-85-color: rgba(0, 0, 0, 0.85);
 }
 
 body.dark {
@@ -22,6 +23,7 @@ body.dark {
   --shadow-color: #3bf13b;
   --green-shadow: 0 0 0.5rem var(--shadow-color);
   --bg-85-color: rgba(55, 55, 55, 0.85);
+  --text-85-color: rgba(255, 255, 255, 0.85);
 }
 
 body {
