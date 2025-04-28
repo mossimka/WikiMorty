@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
 
 html{
   scrollbar-color: rgb(1, 192, 216) rgba(1, 192, 216, 0.2);
+  letter-spacing: 0.2rem;
 }
 
 body.light {
   --bg-color: white;
   --text-color: black;
-  --primary-color: #01c0d8;
+  --primary-color: #01abbf;
   --shadow-color: #3bf13b;
   --green-shadow: 0 0 0.5rem var(--shadow-color);
   --light-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -17,7 +18,7 @@ body.light {
 body.dark {
   --bg-color: #373737;
   --text-color: white;
-  --primary-color: #01abbf;
+  --primary-color: #009eb1;
   --shadow-color: #3bf13b;
   --green-shadow: 0 0 0.5rem var(--shadow-color);
   --bg-85-color: rgba(55, 55, 55, 0.85);
@@ -28,8 +29,8 @@ body {
   color: var(--text-color);
   padding: 0;
   margin: 0;
-  font-family: "Dela Gothic One", sans-serif;
-  letter-spacing: 0.1rem;
+  font-family: "Cal Sans", sans-serif;
+  letter-spacing: 0.2rem;
 }
 
 ::selection {

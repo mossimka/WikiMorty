@@ -1,6 +1,6 @@
 .container {
   padding: 20px;
-  max-width: 900px;
+  max-width: 80vw;
   margin: 20px auto;
   background-color: var(--bg-color);
   border-radius: 8px;
@@ -80,12 +80,32 @@ h1 {
   font-weight: bold;
 }
 
+.location{
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.location a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.location a:visited {
+  color: var(--primary-color);
+}
+
+
+.location a:hover {
+  box-shadow: none;
+  text-shadow: var(--green-shadow);
+}
+
 .episodes-section ul{
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 
@@ -95,6 +115,7 @@ h1 {
   text-align: center;
   border: 1px solid #eeeeee;
   padding: 1rem;
+  width: 15vw;
 }
 .episodes-section ul li:hover{
   box-shadow: var(--green-shadow);

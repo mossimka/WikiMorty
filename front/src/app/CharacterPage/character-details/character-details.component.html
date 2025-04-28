@@ -12,8 +12,28 @@
            <li><strong>Species:</strong> {{ character.species }}</li>
            <li *ngIf="character.type"><strong>Type:</strong> {{ character.type }}</li>
            <li><strong>Gender:</strong> {{ character.gender }}</li>
-           <li><strong>Origin:</strong> {{ character.origin.name }}</li>
-           <li><strong>Last Known Location:</strong> {{ character.location.name }}</li>
+           <li class="location">
+             <strong>Origin:</strong>
+             <ng-container *ngIf="getIdFromUrl(character.origin?.url) as originId; else originText">
+               <a [routerLink]="['/locations', originId]">
+                 {{ character.origin.name }}
+               </a>
+             </ng-container>
+             <ng-template #originText>
+               {{ character.origin.name }}
+             </ng-template>
+           </li>
+           <li class="location">
+             <strong>Last Known Location:</strong>
+             <ng-container *ngIf="getIdFromUrl(character.location?.url) as locationId; else locationText">
+               <a [routerLink]="['/locations', locationId]">
+                 {{ character.location.name }}
+               </a>
+             </ng-container>
+             <ng-template #locationText>
+                {{ character.location.name }}
+             </ng-template>
+           </li>
            <li><strong>Appears in:</strong> {{ character.episode.length }} episode(s)</li>
            <li><strong>Created:</strong> {{ character.created | date:'longDate' }}</li>
          </ul>
@@ -22,15 +42,32 @@
 
     <div class="episodes-section" *ngIf="character.episode && character.episode.length > 0">
       <h2>Appears in Episodes</h2>
-      <ul>
-        <li *ngFor="let episodeUrl of character.episode">
-          <a [href]="episodeUrl" target="_blank" rel="noopener noreferrer">
-            Episode {{ episodeUrl.split('/').pop() }}
-          </a>
+
+      <ng-container *ngIf="episodes$ | async as episodes; else loadingEpisodes">
+        <ul *ngIf="episodes.length > 0; else noEpisodesFound">
+          <li *ngFor="let episode of episodes">
+              <a [routerLink]="['/episodes', episode.id]">
+                {{ episode.name }} ({{ episode.episode }})
+              </a>
           </li>
-      </ul>
+        </ul>
+        <ng-template #noEpisodesFound>
+          <p>Could not load episode details for this character.</p>
+        </ng-template>
+      </ng-container>
+
+      <ng-template #loadingEpisodes>
+        <div class="loading-container small-loader">
+          <p>Loading episodes...</p>
+          <div class="loader"></div>
+        </div>
+      </ng-template>
     </div>
-    </ng-container>
+    <div *ngIf="!character.episode || character.episode.length === 0" class="no-results">
+      <p>This character has not appeared in any recorded episodes.</p>
+    </div>
+
+  </ng-container>
 
   <ng-template #loadingOrError>
     <div *ngIf="loadingError" class="error-message">

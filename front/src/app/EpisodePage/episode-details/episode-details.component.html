@@ -16,18 +16,21 @@
 
     <div class="characters-section" *ngIf="episode.characters && episode.characters.length > 0">
       <h2>Characters in this Episode</h2>
-      <ul>
-        <li *ngFor="let characterUrl of episode.characters">
-          <ng-container *ngIf="getCharacterId(characterUrl) as charId">
-             <a [routerLink]="['/characters', charId]">
-               Character {{ charId }}
-             </a>
-          </ng-container>
-          <ng-container *ngIf="!getCharacterId(characterUrl)">
-            <span>Invalid Character Link</span>
-          </ng-container>
-        </li>
-      </ul>
+      <ng-container *ngIf="characters$ | async as characters; else loadingCharacters">
+        <ul>
+          <li *ngFor="let character of characters">
+            <a [routerLink]="['/characters', character.id]">
+              {{ character.name }}
+            </a>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-template #loadingCharacters>
+        <div class="loading-container small-loader">
+             <p>Loading characters...</p>
+             <div class="loader"></div>
+        </div>
+      </ng-template>
     </div>
 
     </ng-container>

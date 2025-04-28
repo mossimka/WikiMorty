@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {catchError, forkJoin, map, Observable, of} from 'rxjs';
 
 import {
   Character,
@@ -29,5 +29,23 @@ export class CharactersService {
   getCharacterById(id: number): Observable<Character> {
     const endpoint = `${this.charactersApiUrl}/${id}`;
     return this.http.get<Character>(endpoint);
+  }
+
+  getMultipleCharactersById(ids: number[]): Observable<Character[]> {
+    if (!ids || ids.length === 0) {
+      return of([]);
+    }
+    const characterObservables = ids.map(id =>
+      this.getCharacterById(id).pipe(
+        catchError(error => {
+          console.warn(`Could not fetch character with ID ${id}:`, error);
+          return of(null);
+        })
+      )
+    );
+
+    return forkJoin(characterObservables).pipe(
+      map(results => results.filter(character => character !== null) as Character[])
+    );
   }
 }

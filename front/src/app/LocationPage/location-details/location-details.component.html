@@ -17,21 +17,25 @@
 
     <div class="residents-section" *ngIf="location.residents && location.residents.length > 0">
       <h2>Residents</h2>
-      <ul>
-        <li *ngFor="let residentUrl of location.residents">
-          <ng-container *ngIf="getCharacterId(residentUrl) as charId">
-             <a [routerLink]="['/characters', charId]">
-               Character {{ charId }}
-             </a>
-          </ng-container>
-          <ng-container *ngIf="!getCharacterId(residentUrl)">
-            <span>Invalid Resident Link</span>
-          </ng-container>
-        </li>
-      </ul>
-    </div>
-    <div *ngIf="!location.residents || location.residents.length === 0" class="no-results">
-      <p>There are no known residents recorded for this location.</p>
+      <ng-container *ngIf="residents$ | async as residents; else loadingResidents">
+        <ul *ngIf="residents.length > 0; else noResidentsFound">
+          <li *ngFor="let resident of residents">
+              <a [routerLink]="['/characters', resident.id]">
+                {{ resident.name }}
+              </a>
+          </li>
+        </ul>
+        <ng-template #noResidentsFound>
+          <p>Could not load details for residents of this location.</p>
+        </ng-template>
+      </ng-container>
+
+      <ng-template #loadingResidents>
+        <div class="loading-container small-loader">
+             <p>Loading residents...</p>
+             <div class="loader"></div>
+        </div>
+      </ng-template>
     </div>
 
 

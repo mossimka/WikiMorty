@@ -3,7 +3,7 @@ button{
   border: none;
   border-radius: 2rem;
   padding: 2vh;
-  font-family: "Dela Gothic One", sans-serif;
+  font-family: "Cal Sans", sans-serif;
   color: var(--text-color);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
