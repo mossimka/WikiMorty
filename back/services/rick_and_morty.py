@@ -2,7 +2,7 @@ import httpx
 from fastapi import HTTPException
 from typing import Optional, Dict, Any
 
-BASE_URL = "https://rickandmortyapi.com/api/"
+BASE_URL = "https://nfactorial2.onrender.com/"
 
 async def fetch_from_external_api(endpoint: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     url = BASE_URL + endpoint
