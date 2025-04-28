@@ -1,0 +1,107 @@
+/* General styles adapted from character details */
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: var(--light-shadow);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: var(--text-color);
+}
+
+.details {
+  margin-bottom: 30px;
+}
+
+.info h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.info li strong {
+  color: var(--text-color);
+  margin-right: 8px;
+  min-width: 100px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.characters-section {
+  margin-top: 30px;
+}
+
+.characters-section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.characters-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.characters-section ul li {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #eeeeee;
+}
+
+.characters-section ul li:hover{
+  box-shadow: var(--green-shadow);
+  text-shadow: var(--green-shadow);
+}
+
+.characters-section ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+}
+.characters-section ul li a:hover{
+  box-shadow: none;
+}

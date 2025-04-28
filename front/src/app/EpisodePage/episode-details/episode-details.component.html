@@ -1,1 +1,44 @@
-<p>episode-details works!</p>
+<div class="container">
+  <ng-container *ngIf="episode$ | async as episode; else loadingOrError">
+    <h1>{{ episode.name }}</h1>
+    <h2>({{ episode.episode }})</h2>
+
+    <div class="details">
+      <div class="info">
+         <h2>Episode Information</h2>
+         <ul>
+           <li><strong>Air Date:</strong> {{ episode.air_date }}</li>
+           <li><strong>Created:</strong> {{ episode.created | date:'longDate' }}</li>
+           <li><strong>Appears in:</strong> {{ episode.characters.length }} character(s)</li>
+         </ul>
+       </div>
+    </div>
+
+    <div class="characters-section" *ngIf="episode.characters && episode.characters.length > 0">
+      <h2>Characters in this Episode</h2>
+      <ul>
+        <li *ngFor="let characterUrl of episode.characters">
+          <ng-container *ngIf="getCharacterId(characterUrl) as charId">
+             <a [routerLink]="['/characters', charId]">
+               Character {{ charId }}
+             </a>
+          </ng-container>
+          <ng-container *ngIf="!getCharacterId(characterUrl)">
+            <span>Invalid Character Link</span>
+          </ng-container>
+        </li>
+      </ul>
+    </div>
+
+    </ng-container>
+
+  <ng-template #loadingOrError>
+    <div *ngIf="loadingError" class="error-message">
+      <p>Could not load episode details. The episode may not exist or there was a network error.</p>
+      </div>
+    <div *ngIf="!loadingError">
+      <p>Loading episode details...</p>
+      <div class="loader"></div>
+    </div>
+  </ng-template>
+</div>

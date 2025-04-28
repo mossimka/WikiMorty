@@ -20,7 +20,7 @@ export class EpisodesService {
     return this.http.get<EpisodesApiResponse>(this.episodesApiUrl, { params: queryParams });
   }
 
-  getEpisodesById(id: number): Observable<Episode> {
+  getEpisodeById(id: number): Observable<Episode> {
     const endpoint = `${this.episodesApiUrl}/${id}`;
     return this.http.get<Episode>(endpoint);
   }

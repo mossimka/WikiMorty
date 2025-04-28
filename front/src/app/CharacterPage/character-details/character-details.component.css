@@ -76,15 +76,36 @@ h1 {
 }
 
 .status-unknown {
-  color: color: var(--text-color);;
+  color: var(--text-color);;
   font-weight: bold;
 }
 
+.episodes-section ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.episodes-section ul li{
+  background-color: var(--bg-color);
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #eeeeee;
+  padding: 1rem;
+}
+.episodes-section ul li:hover{
+  box-shadow: var(--green-shadow);
+  text-shadow: var(--green-shadow);
+}
 .episodes-section ul li a{
   color: var(--primary-color);
   border-radius: 4px;
   padding: 0.5rem;
 }
-.episodes-section ul li{
-  padding: 1rem;
+.episodes-section ul li a:hover{
+  box-shadow: none;
 }
+

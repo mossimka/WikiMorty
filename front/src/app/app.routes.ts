@@ -5,8 +5,8 @@ import {EpisodesListComponent} from './EpisodePage/episodes-list/episodes-list.c
 import {LocationsListComponent} from './LocationPage/locations-list/locations-list.component';
 import {CharacterDetailsComponent} from './CharacterPage/character-details/character-details.component';
 import {EpisodeDetailsComponent} from './EpisodePage/episode-details/episode-details.component';
+import {LocationDetailsComponent} from './LocationPage/location-details/location-details.component';
 
-let LocationsDetailsComponent;
 export const routes: Routes = [
   {
         path: '',
@@ -40,7 +40,7 @@ export const routes: Routes = [
     },
     {
       path: 'locations/:id',
-      component: LocationsDetailsComponent,
+      component: LocationDetailsComponent,
       title: 'Location Details Page'
     },
 ];
