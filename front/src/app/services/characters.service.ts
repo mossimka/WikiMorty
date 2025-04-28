@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import {catchError, forkJoin, map, Observable, of} from 'rxjs';
 
 import {
-  Character,
+  Character, CharacterDescriptionResponse,
   CharactersApiResponse
 } from '../interfaces/character';
 
@@ -47,5 +47,9 @@ export class CharactersService {
     return forkJoin(characterObservables).pipe(
       map(results => results.filter(character => character !== null) as Character[])
     );
+  }
+
+  getCharacterDescription(id: number): Observable<CharacterDescriptionResponse> {
+    return this.http.get<CharacterDescriptionResponse>(`${this.charactersApiUrl}/${id}/description`);
   }
 }

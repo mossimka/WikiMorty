@@ -40,6 +40,28 @@
        </div>
     </div>
 
+    <!--<div class="ai-description-section">
+      <h2>AI Generated Description</h2>
+        <button *ngIf="!descriptionLoading && !description && !descriptionError"
+                (click)="fetchAiDescription()" [disabled]="descriptionLoading" class="generate-button">
+          Generate Description
+        </button>
+        <div *ngIf="descriptionLoading" class="loading-container small-loader">
+          <p>Generating description...</p>
+          <div class="loader"></div>
+        </div>
+        <div *ngIf="descriptionError" class="error-message">
+          <p>{{ descriptionError }}</p>
+          <button (click)="fetchAiDescription()" [disabled]="descriptionLoading" class="retry-button">
+            Try Again
+          </button>
+        </div>
+
+        <div *ngIf="!descriptionLoading && !descriptionError && description">
+          <p class="ai-description-text">{{ description }}</p>
+        </div>
+    </div>-->
+
     <div class="episodes-section" *ngIf="character.episode && character.episode.length > 0">
       <h2>Appears in Episodes</h2>
 
