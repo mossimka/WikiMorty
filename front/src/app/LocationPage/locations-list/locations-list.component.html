@@ -1,5 +1,7 @@
 <h2 class="page-name">Locations</h2>
 
+<app-page-button [routePath]="['/']"  title="Go back" [ngClass]="'back-button'">Go back</app-page-button>
+
 <ng-container *ngIf="locationsResponse$ | async as response; else loadingOrError" class="list">
 
   <div class="locations-list">
