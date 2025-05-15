@@ -5,13 +5,15 @@ import { CommonModule } from '@angular/common';
 import { LocationsApiResponse } from '../../interfaces/location';
 import { LocationsService } from '../../services/locations.service';
 import { LocationCardComponent } from '../location-card/location-card.component';
+import {PageButtonComponent} from '../../page-button/page-button.component';
 
 @Component({
   selector: 'app-locations-list',
   standalone: true,
   imports: [
     CommonModule,
-    LocationCardComponent
+    LocationCardComponent,
+    PageButtonComponent
   ],
   templateUrl: './locations-list.component.html',
   styleUrls: ['./locations-list.component.css']

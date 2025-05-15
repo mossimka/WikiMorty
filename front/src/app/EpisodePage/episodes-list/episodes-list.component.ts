@@ -4,14 +4,16 @@ import { CommonModule } from '@angular/common';
 
 import { EpisodesApiResponse, Episode } from '../../interfaces/episode'; // Correct interfaces
 import { EpisodesService } from '../../services/episodes.service';     // Correct service
-import { EpisodeCardComponent } from '../episode-card/episode-card.component'; // Correct card component
+import { EpisodeCardComponent } from '../episode-card/episode-card.component';
+import {PageButtonComponent} from '../../page-button/page-button.component'; // Correct card component
 
 @Component({
   selector: 'app-episodes-list',
   standalone: true, // <-- Add standalone: true
   imports: [
     CommonModule,
-    EpisodeCardComponent
+    EpisodeCardComponent,
+    PageButtonComponent
   ],
   templateUrl: './episodes-list.component.html',
   styleUrls: ['./episodes-list.component.css']

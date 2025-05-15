@@ -1,15 +1,30 @@
-button{
-  background-color: var(--bg-color);
+button {
   border: none;
   border-radius: 2rem;
   padding: 2vh;
   font-family: "Cal Sans", sans-serif;
-  color: var(--text-color);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  color: var(--text-color);
 }
 
-button:hover{
+.usual{
+  background-color: var(--bg-color);
+}
+
+.usual:hover{
+  box-shadow: var(--green-shadow);
+  text-shadow: var(--green-shadow);
+}
+
+.back-button{
+  position: absolute;
+  top: 17.5vh;
+  left: 20vh;
+  background-color: var(--primary-color);
+}
+
+.back-button:hover{
   box-shadow: var(--green-shadow);
   text-shadow: var(--green-shadow);
 }
