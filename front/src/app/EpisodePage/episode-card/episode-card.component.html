@@ -1,5 +1,5 @@
 <div class="episode-card" *ngIf="episode">
-  <h3>{{ episode.name }}</h3>
+  <h3>{{ episode.name }} №{{episode.id}}</h3>
   <p>Air date: {{ episode.air_date }}</p>
   <p>
     {{ episode.episode.replace('S', 'Season: ').replace('E', ' Episode: ') }}

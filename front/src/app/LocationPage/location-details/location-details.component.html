@@ -21,6 +21,7 @@
         <ul *ngIf="residents.length > 0; else noResidentsFound">
           <li *ngFor="let resident of residents">
               <a [routerLink]="['/characters', resident.id]">
+                <img [src]="resident.image" [alt]="resident.name">
                 {{ resident.name }}
               </a>
           </li>

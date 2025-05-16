@@ -8,5 +8,6 @@ export const images = {
   backgroundMain: 'images/background-main.jpg',
   backgroundLocations: 'images/background-locations.jpg',
   backgroundCharacters: 'images/background-characters.jpg',
-  backgroundEpisodes: 'images/background-episodes.jpg'
+  backgroundEpisodes: 'images/background-episodes.jpg',
+  arrow: 'images/arrow.png',
 };

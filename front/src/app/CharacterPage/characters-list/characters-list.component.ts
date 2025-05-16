@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
 import { CharactersApiResponse, Character } from '../../interfaces/character';
 import { CharactersService} from '../../services/characters.service';
 import { CharacterCardComponent } from '../character-card/character-card.component';
-import {PageButtonComponent} from '../../page-button/page-button.component'; // <-- Import the new component
+import {PageButtonComponent} from '../../page-button/page-button.component';
+import {images} from '../../../../public/images/images'; // <-- Import the new component
 
 @Component({
   selector: 'app-characters-list',
@@ -54,4 +55,6 @@ export class CharactersListComponent implements OnInit {
       return null;
     }
   }
+
+  protected readonly images = images;
 }
