@@ -1,8 +1,5 @@
-// src/app/components/character-details/character-details.component.ts
-
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-// Убираем BehaviorSubject, finalize остается полезным
 import { Observable, switchMap, catchError, of, finalize, tap, filter, map } from 'rxjs';
 import { CommonModule, DatePipe } from '@angular/common';
 
@@ -76,7 +73,7 @@ export class CharacterDetailsComponent implements OnInit {
      );
   }
 
-  /*fetchAiDescription(): void {
+  fetchAiDescription(): void {
     if (this.currentCharacterId === null) {
       this.descriptionError = "Cannot load  description: ID isn't there.";
       console.error(this.descriptionError);
@@ -104,7 +101,7 @@ export class CharacterDetailsComponent implements OnInit {
         this.description = null;
       }
     });
-  }*/
+  }
 
   getIdFromUrl(url: string | undefined | null): string | null {
     if (!url) {
