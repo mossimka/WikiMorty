@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
 import { EpisodesApiResponse, Episode } from '../../interfaces/episode'; // Correct interfaces
 import { EpisodesService } from '../../services/episodes.service';     // Correct service
 import { EpisodeCardComponent } from '../episode-card/episode-card.component';
-import {PageButtonComponent} from '../../page-button/page-button.component'; // Correct card component
+import {PageButtonComponent} from '../../page-button/page-button.component';
+import {images} from '../../../../public/images/images'; // Correct card component
 
 @Component({
   selector: 'app-episodes-list',
@@ -56,4 +57,6 @@ export class EpisodesListComponent implements OnInit {
       return null;
     }
   }
+
+  protected readonly images = images;
 }

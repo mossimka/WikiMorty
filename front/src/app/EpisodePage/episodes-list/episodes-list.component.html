@@ -1,6 +1,7 @@
 <h2 class="page-name">Episodes</h2>
 
-<app-page-button [routePath]="['/']"  title="Go back" [ngClass]="'back-button'">Go back</app-page-button>
+<img [src]="images.arrow" class="arrow" alt="arrow">
+<app-page-button [routePath]="['/']"  title="Go back" [ngClass]="'back-button'"></app-page-button>
 
 <ng-container *ngIf="episodeResponse$ | async as response; else loadingOrError" class="list">
   <div class="episode-list">

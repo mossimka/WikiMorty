@@ -100,8 +100,18 @@ h2 {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
 .residents-section ul li a:hover{
   box-shadow: none;
+}
+
+.residents-section ul li a img {
+  border-radius: 50%;
+  width: 5vw;
 }

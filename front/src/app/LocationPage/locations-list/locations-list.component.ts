@@ -6,6 +6,7 @@ import { LocationsApiResponse } from '../../interfaces/location';
 import { LocationsService } from '../../services/locations.service';
 import { LocationCardComponent } from '../location-card/location-card.component';
 import {PageButtonComponent} from '../../page-button/page-button.component';
+import {images} from '../../../../public/images/images';
 
 @Component({
   selector: 'app-locations-list',
@@ -46,4 +47,6 @@ export class LocationsListComponent implements OnInit {
       this.loadLocations();
     }
   }
+
+  protected readonly images = images;
 }

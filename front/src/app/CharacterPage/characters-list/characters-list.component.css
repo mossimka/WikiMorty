@@ -42,3 +42,10 @@
   box-shadow: var(--green-shadow);
   text-shadow: var(--green-shadow);
 }
+
+.arrow{
+  width: 4vh;
+  position: absolute;
+  top: 18.5vh;
+  left: 8vw;
+}

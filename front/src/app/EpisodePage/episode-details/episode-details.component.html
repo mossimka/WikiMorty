@@ -20,6 +20,7 @@
         <ul>
           <li *ngFor="let character of characters">
             <a [routerLink]="['/characters', character.id]">
+              <img [src]="character.image" [alt]="character.name">
               {{ character.name }}
             </a>
           </li>

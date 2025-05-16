@@ -12,6 +12,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 50vh;
 }
 
@@ -36,7 +37,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
+
+.pages-button:hover{
+  transform: skewY(0.4deg) scale(1.02);
+}
+
 .pages-button{
   width: 22vw;
   height: 25vw;

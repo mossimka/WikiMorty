@@ -1,5 +1,6 @@
 <h2 class="page-name">Characters</h2>
 
+<img [src]="images.arrow" class="arrow" alt="arrow">
 <app-page-button [routePath]="['/']"  title="Go back" [ngClass]="'back-button'"></app-page-button>
 
 <ng-container *ngIf="charactersResponse$ | async as response; else loadingOrError" class="list">
