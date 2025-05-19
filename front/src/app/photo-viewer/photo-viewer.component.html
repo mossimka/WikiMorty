@@ -1,0 +1,6 @@
+<div class="overlay" (click)="onClose()">
+  <div class="photo-modal" (click)="$event.stopPropagation()">
+    <img [src]="photo" alt="Detailed view">
+    <button class="close-btn" (click)="onClose()">X</button>
+  </div>
+</div>

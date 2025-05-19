@@ -49,3 +49,11 @@
   top: 18.5vh;
   left: 8vw;
 }
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 32vh;
+  text-align: center;
+}

@@ -8,6 +8,9 @@ import { EpisodesService } from '../../services/episodes.service';
 import {LocationI} from '../../interfaces/location';
 import {Character} from '../../interfaces/character';
 import {CharactersService} from '../../services/characters.service';
+import {PageButtonComponent} from '../../page-button/page-button.component';
+import {images} from '../../../../public/images/images';
+import {FormatEpisodePipe} from '../../format-episode.pipe';
 
 @Component({
   selector: 'app-episode-details',
@@ -15,7 +18,9 @@ import {CharactersService} from '../../services/characters.service';
   imports: [
     CommonModule,
     RouterLink,
-    DatePipe
+    DatePipe,
+    PageButtonComponent,
+    FormatEpisodePipe
   ],
   templateUrl: './episode-details.component.html',
   styleUrls: ['./episode-details.component.css']
@@ -81,4 +86,5 @@ export class EpisodeDetailsComponent implements OnInit {
     }
   }
 
+  protected readonly images = images;
 }

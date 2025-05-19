@@ -10,11 +10,15 @@ import { Character } from '../../interfaces/character';
 import { CharactersService } from '../../services/characters.service';
 import { Episode } from '../../interfaces/episode';
 import { EpisodesService } from '../../services/episodes.service';
+import {PageButtonComponent} from '../../page-button/page-button.component';
+import {images} from '../../../../public/images/images';
+import {FormatEpisodePipe} from '../../format-episode.pipe';
+import {PhotoViewerComponent} from '../../photo-viewer/photo-viewer.component';
 
 @Component({
   selector: 'app-character-details',
   standalone: true,
-  imports: [ CommonModule, RouterLink, DatePipe ],
+  imports: [CommonModule, RouterLink, DatePipe, PageButtonComponent, FormatEpisodePipe, PhotoViewerComponent],
   templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.css']
 })
@@ -32,6 +36,8 @@ export class CharacterDetailsComponent implements OnInit {
   private currentCharacterId: number | null = null;
 
   loadingError = false;
+
+  selectedPhotoUrl: string | null = null;
 
   ngOnInit(): void {
     const characterId$ = this.route.paramMap.pipe(
@@ -119,4 +125,14 @@ export class CharacterDetailsComponent implements OnInit {
       return null;
     }
   }
+
+  openPhoto(url: string) {
+    this.selectedPhotoUrl = url;
+  }
+
+  closePhoto() {
+    this.selectedPhotoUrl = null;
+  }
+
+  protected readonly images = images;
 }

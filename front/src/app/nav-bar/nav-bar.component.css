@@ -28,5 +28,10 @@
   border: none;
   cursor: pointer;
   border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme:hover{
+  box-shadow: var(--green-shadow);
 }
 

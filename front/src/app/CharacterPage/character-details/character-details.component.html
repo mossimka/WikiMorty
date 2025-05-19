@@ -1,9 +1,15 @@
+<img [src]="images.arrow" class="arrow" alt="arrow">
+<app-page-button [routePath]="['/characters']"  title="Go back" [ngClass]="'back-button-details'">Go back</app-page-button>
+
+
 <div class="container">
   <ng-container *ngIf="character$ | async as character; else loadingOrError">
     <h1>{{ character.name }}</h1>
     <div class="details">
       <div class="image-container">
-        <img [src]="character.image" [alt]="character.name">
+        <img [src]="character.image" [alt]="character.name" (click)="openPhoto(character.image)">
+
+        <app-photo-viewer *ngIf="selectedPhotoUrl" [photo]="character.image" [title]="character.name" (close)="closePhoto()"></app-photo-viewer>
       </div>
       <div class="info">
          <h2>Details</h2>
@@ -69,7 +75,9 @@
         <ul *ngIf="episodes.length > 0; else noEpisodesFound">
           <li *ngFor="let episode of episodes">
               <a [routerLink]="['/episodes', episode.id]">
-                {{ episode.name }} ({{ episode.episode }})
+                {{ episode.name }}
+                <br>
+                ({{ episode.episode | formatEpisode }})
               </a>
           </li>
         </ul>
@@ -79,7 +87,7 @@
       </ng-container>
 
       <ng-template #loadingEpisodes>
-        <div class="loading-container small-loader">
+        <div class="loading-container">
           <p>Loading episodes...</p>
           <div class="loader"></div>
         </div>
@@ -91,11 +99,11 @@
 
   </ng-container>
 
-  <ng-template #loadingOrError>
+  <ng-template #loadingOrError class="loading-container">
     <div *ngIf="loadingError" class="error-message">
       <p>Could not load character details. The character may not exist or there was a network error.</p>
     </div>
-    <div *ngIf="!loadingError">
+    <div *ngIf="!loadingError" class="loading-container">
       <p>Loading character details...</p>
     </div>
   </ng-template>

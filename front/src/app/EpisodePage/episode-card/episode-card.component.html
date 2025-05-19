@@ -2,7 +2,7 @@
   <h3>{{ episode.name }} №{{episode.id}}</h3>
   <p>Air date: {{ episode.air_date }}</p>
   <p>
-    {{ episode.episode.replace('S', 'Season: ').replace('E', ' Episode: ') }}
+    {{ episode.episode | formatEpisode }}
   </p>
   <button type="button" class="details-button" [routerLink]="['/episodes', episode.id]">
     View Details

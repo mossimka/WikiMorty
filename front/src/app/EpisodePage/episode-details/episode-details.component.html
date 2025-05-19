@@ -1,7 +1,10 @@
+<img [src]="images.arrow" class="arrow" alt="arrow">
+<app-page-button [routePath]="['/characters']"  title="Go back" [ngClass]="'back-button-details'">Go back</app-page-button>
+
 <div class="container">
   <ng-container *ngIf="episode$ | async as episode; else loadingOrError">
     <h1>{{ episode.name }}</h1>
-    <h2>({{ episode.episode }})</h2>
+    <h2>({{ episode.episode | formatEpisode}})</h2>
 
     <div class="details">
       <div class="info">
@@ -27,7 +30,7 @@
         </ul>
       </ng-container>
       <ng-template #loadingCharacters>
-        <div class="loading-container small-loader">
+        <div class="loading-container">
              <p>Loading characters...</p>
              <div class="loader"></div>
         </div>
@@ -40,9 +43,8 @@
     <div *ngIf="loadingError" class="error-message">
       <p>Could not load episode details. The episode may not exist or there was a network error.</p>
       </div>
-    <div *ngIf="!loadingError">
+    <div *ngIf="!loadingError" class="loading-container">
       <p>Loading episode details...</p>
-      <div class="loader"></div>
     </div>
   </ng-template>
 </div>

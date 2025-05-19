@@ -1,7 +1,6 @@
-/* General styles adapted from character details */
 .container {
   padding: 20px;
-  max-width: 900px;
+  max-width: 70vw;
   margin: 20px auto;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -89,11 +88,13 @@ h2 {
   border-radius: 4px;
   text-align: center;
   border: 1px solid #eeeeee;
+  transition: all 0.3s ease-in-out;
 }
 
 .residents-section ul li:hover{
   box-shadow: var(--green-shadow);
   text-shadow: var(--green-shadow);
+  transform: skewY(0.5deg) scale(1.01);
 }
 
 .residents-section ul li a {
@@ -114,4 +115,15 @@ h2 {
 .residents-section ul li a img {
   border-radius: 50%;
   width: 5vw;
+}
+
+.arrow{
+  width: 4vh;
+  position: absolute;
+  top: 18.5vh;
+  left: 15.5vw;
+}
+
+.loading-container{
+  margin: 10vh auto;
 }

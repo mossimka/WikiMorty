@@ -7,13 +7,16 @@ import { LocationI } from '../../interfaces/location';
 import { LocationsService } from '../../services/locations.service';
 import {Character} from '../../interfaces/character';
 import {CharactersService} from '../../services/characters.service';
+import {PageButtonComponent} from '../../page-button/page-button.component';
+import {images} from '../../../../public/images/images';
 
 @Component({
   selector: 'app-location-details',
   standalone: true,
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    PageButtonComponent
   ],
   templateUrl: './location-details.component.html',
   styleUrls: ['./location-details.component.css']
@@ -78,4 +81,6 @@ export class LocationDetailsComponent implements OnInit {
       return null;
     }
   }
+
+  protected readonly images = images;
 }

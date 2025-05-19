@@ -28,3 +28,10 @@ button {
   box-shadow: var(--green-shadow);
   text-shadow: var(--green-shadow);
 }
+
+.back-button-details{
+  position: absolute;
+  top: 17.5vh;
+  left: 18vw;
+  background-color: var(--primary-color);
+}

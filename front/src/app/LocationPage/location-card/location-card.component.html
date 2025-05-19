@@ -3,7 +3,7 @@
     <h3>{{ location.name }}</h3>
     <div class="details">
       <p><strong>Type:</strong> {{ location.type || 'Unknown' }}</p>
-      <p><strong>Residents:</strong> {{ location.residents?.length || 0 }}</p>
+      <p><strong>Residents:</strong> {{ location.residents.length || 0 }}</p>
     </div>
     <button type="button" class="details-button" [routerLink]="['/locations', location.id]">
       View Details

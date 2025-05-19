@@ -1,6 +1,10 @@
+:host{
+  min-height: 50vh;
+}
+
 .container {
   padding: 20px;
-  max-width: 80vw;
+  max-width: 70vw;
   margin: 20px auto;
   background-color: var(--bg-color);
   border-radius: 8px;
@@ -30,7 +34,11 @@ h1 {
   max-width: 100%;
   height: auto;
   border-radius: 50%;
-  border: 3px solid #ddd;
+  border: 3px solid var(--light-color);
+}
+
+.image-container img:hover {
+  cursor: zoom-in;
 }
 
 .info {
@@ -115,11 +123,13 @@ h1 {
   text-align: center;
   border: 1px solid #eeeeee;
   padding: 1rem;
-  width: 15vw;
+  width: 14.5vw;
+  transition: all 0.3s ease-in-out;
 }
 .episodes-section ul li:hover{
   box-shadow: var(--green-shadow);
   text-shadow: var(--green-shadow);
+  transform: skewY(0.5deg) scale(1.01);
 }
 .episodes-section ul li a{
   color: var(--primary-color);
@@ -128,5 +138,16 @@ h1 {
 }
 .episodes-section ul li a:hover{
   box-shadow: none;
+}
+
+.arrow{
+  width: 4vh;
+  position: absolute;
+  top: 18.5vh;
+  left: 15.5vw;
+}
+
+.loading-container{
+  margin: 10vh auto;
 }
 

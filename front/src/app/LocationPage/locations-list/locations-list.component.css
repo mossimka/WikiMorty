@@ -10,6 +10,9 @@
 .list{
   width: 100%;
 }
+:host{
+  min-height: 50vh;
+}
 
 .locations-list{
   margin: 0 auto;
@@ -48,4 +51,12 @@
   position: absolute;
   top: 18.5vh;
   left: 8vw;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 32vh;
+  text-align: center;
 }

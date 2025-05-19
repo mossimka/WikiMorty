@@ -1,3 +1,7 @@
+<img [src]="images.arrow" class="arrow" alt="arrow">
+<app-page-button [routePath]="['/locations']"  title="Go back" [ngClass]="'back-button-details'">Go back</app-page-button>
+
+
 <div class="container">
   <ng-container *ngIf="location$ | async as location; else loadingOrError">
     <h1>{{ location.name }}</h1>
@@ -10,7 +14,7 @@
          <ul>
            <li *ngIf="location.type"><strong>Type:</strong> {{ location.type }}</li>
            <li><strong>Dimension:</strong> {{ location.dimension || 'Unknown' }}</li>
-           <li><strong>Resident Count:</strong> {{ location.residents?.length || 0 }}</li>
+           <li><strong>Resident Count:</strong> {{ location.residents.length || 0 }}</li>
          </ul>
        </div>
     </div>
