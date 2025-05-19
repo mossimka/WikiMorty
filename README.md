@@ -1,4 +1,4 @@
-# Nfactorial 2 Tour
+# Project for Nfactorial 2nd Tour
 ![Логотип Nfactorial 2 Tour](front/public/images/logo.png)
 
 **Живое приложение:** [https://nfactorial2-iota.vercel.app/](https://nfactorial2-iota.vercel.app/)
