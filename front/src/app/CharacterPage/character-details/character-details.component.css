@@ -163,6 +163,21 @@ h1 {
   padding: 1rem;
 }
 
+.ai-description-logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30vw;
+}
+
+.ai-logo{
+  height: 5vw;
+  width: 5vw;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--green-shadow);
+}
+
 .ai-description-text{
   color: var(--text-color);
   text-shadow: var(--ai-text-shadow);

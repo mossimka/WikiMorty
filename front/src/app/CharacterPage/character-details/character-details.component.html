@@ -48,7 +48,10 @@
 
     <div class="ai-description-section">
       <div class="ai-description">
-        <h2>Description from I.D.E. (AI)</h2>
+        <div class="ai-description-logo">
+          <h2>Description from I.D.E. (AI)</h2>
+            <img class="ai-logo" [src]="images.ide">
+        </div>
         <div class="ai-description-container">
           <button *ngIf="!descriptionLoading && !description && !descriptionError"
                   (click)="fetchAiDescription()" [disabled]="descriptionLoading" class="generate-button">
