@@ -31,18 +31,19 @@ async def get_characters_list(
 async def get_character_by_id(character_id: int):
     return await fetch_from_external_api(f"character/{character_id}")
 
-'''@router.get("/{character_id}/description")
-async def get_ai_character_description_simple(character_id: int = Path(..., ge=1)):
+@router.get("/{character_id}/description")
+async def get_ai_character_description(character_id: int = Path(..., ge=1)):
     character_data = await fetch_from_external_api(f"character/{character_id}")
     character_name = character_data.get("name")
 
-    ai_response_data = await ai_service.generate_character_description(character_name)
+    ai_response = await ai_service.generate_character_description(character_name)
 
-    description = ai_response_data.get('description', 'Description was not generated.') if isinstance(ai_response_data, dict) else 'Error in AI response fromat.'
-
+    if "error" in ai_response:
+        raise HTTPException(status_code=500, detail=ai_response["error"])
 
     return {
         "character_id": character_id,
-        "name": character_name,
-        "description": description
-    }'''
+        "name": ai_response["name"],
+        "description": ai_response["main_text"],
+        "tags": ai_response.get("tags", [])
+    }

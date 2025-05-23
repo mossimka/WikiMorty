@@ -25,3 +25,32 @@
     <button class="pages-button" [routerLink]="['/locations']" id="locations"><p>Locations</p></button>
   </div>
 </section>
+
+<section class="ai">
+  <div>
+    <img class="ai-logo" [src]="images.ide" alt="I.D.E.">
+    <h2><span>AI Generated Descriptions with I.D.E.</span></h2>
+  </div>
+
+  <div>
+    <p class="ai-description"><span>The I.D.E.</span> — Interdimensional Description Engine — a quirky, intelligent AI module built in the Citadel of Ricks.
+        He specializes in generating creative, lore-aware, and character-consistent descriptions for characters from the *Rick and Morty* multiverse.
+        He describe them in a colorful, informative, and often humorous way.
+        He generates to your plausible, character-consistent descriptions using his knowledge.
+    </p>
+  </div>
+
+  <div class="ai-button-div">
+    <button class="ai-button" (click)="generateExampleDescription()">Try an Example Character</button>
+  </div>
+
+  <div class="ai-generated">
+  <div  *ngIf="!descriptionLoading && !descriptionError && description" >
+    <p class="ai-description-text">{{ description }}</p>
+    <ul>
+      <li *ngFor="let tag of tags">
+        <i><span class="tag">{{ tag }}</span></i><br>
+      </li>
+    </ul>
+  </div></div>
+</section>

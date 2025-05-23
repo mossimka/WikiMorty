@@ -45,7 +45,7 @@
 }
 
 .pages-button{
-  width: 22vw;
+  width: 23vw;
   height: 25vw;
   border-radius: 2rem;
   font-family: "Cal Sans", sans-serif;
@@ -84,4 +84,87 @@
   background-repeat: no-repeat;
 }
 
+.ai{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  flex-direction: column;
+  margin: 10vh 0;
+}
 
+.ai div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+}
+
+.ai-logo{
+  height: 10vw;
+  width: 10vw;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--green-shadow);
+}
+
+.ai-generated {
+  align-items: flex-start;
+}
+.ai-generated div {
+  box-shadow: var(--light-shadow);
+  padding: 1rem;
+  border-radius: 1rem;
+  align-items: flex-start;
+}
+
+.ai span{
+  text-shadow: var(--ai-text-shadow);
+}
+
+.ai-button-div {
+  margin: 4vh 0;
+}
+
+.ai-button{
+  border: none;
+  box-shadow: var(--light-shadow);
+  background-color: var(--primary-color);
+  border-radius: 1vh;
+  padding: 0.5rem 1rem;
+  font-family: "Cal Sans", sans-serif;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.ai-button:hover{
+  box-shadow: var(--ai-text-shadow);
+}
+
+.example-button-wrapper {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.example-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #17d4fc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.example-button:hover {
+  background-color: #0fbde3;
+}
+
+.tag{
+  text-shadow: var(--ai-text-shadow);
+}

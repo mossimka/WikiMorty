@@ -121,7 +121,7 @@ h1 {
   background-color: var(--bg-color);
   border-radius: 4px;
   text-align: center;
-  border: 1px solid #eeeeee;
+  box-shadow: var(--light-shadow);
   padding: 1rem;
   width: 14.5vw;
   transition: all 0.3s ease-in-out;
@@ -151,3 +151,46 @@ h1 {
   margin: 10vh auto;
 }
 
+.ai-description-section{
+  background-image: url('/images/computer.jpg');
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+.ai-description{
+  background-color: var(--bg-85-color);
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.ai-description-text{
+  color: var(--text-color);
+  text-shadow: var(--ai-text-shadow);
+}
+
+.ai-description-info{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.ai-description-info span{
+  text-shadow: var(--green-shadow);
+  font-weight: 700;
+}
+
+.generate-button {
+  background-color: var(--primary-color);
+  box-shadow: var(--light-shadow);
+  border-radius:3vh;
+  border: none;
+  width: 8vw;
+  padding: 0.5vh;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Cal Sans", sans-serif;
+  color: var(--text-color);
+  margin: 3vh 0;
+}
+
+.tag{
+  text-shadow: var(--ai-text-shadow);
+}

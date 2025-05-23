@@ -10,4 +10,6 @@ export const images = {
   backgroundCharacters: 'images/background-characters.jpg',
   backgroundEpisodes: 'images/background-episodes.jpg',
   arrow: 'images/arrow.png',
+  backAi: 'images/computer.jpg',
+  ide: 'images/IDE.png',
 };

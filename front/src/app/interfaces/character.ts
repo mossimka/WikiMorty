@@ -45,4 +45,5 @@ export interface CharacterDescriptionResponse {
   character_id: number;
   name: string;
   description: string;
+  tags: string[];
 }

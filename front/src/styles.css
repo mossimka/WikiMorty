@@ -6,15 +6,16 @@ html{
 }
 
 body.light {
-  --bg-color: white;
+  --bg-color: #f2f5f6;
   --text-color: black;
   --primary-color: #01abbf;
   --shadow-color: #3bf13b;
   --green-shadow: 0 0 0.5rem var(--shadow-color);
-  --light-shadow: 0 0 5px rgba(0,0,0,0.1);
+  --light-shadow: 0 0 5px rgba(0,0,0,0.2);
   --light-color: rgba(0,0,0,0.1);
-  --bg-85-color: rgba(255, 255, 255, 0.85);
+  --bg-85-color: rgba(242, 245, 246, 0.85);
   --text-85-color: rgba(0, 0, 0, 0.85);
+  --ai-text-shadow: 0 0 0.6rem var(--primary-color);
 }
 
 body.dark {
@@ -27,6 +28,7 @@ body.dark {
   --light-color: rgba(255, 255, 255, .3);
   --bg-85-color: rgba(55, 55, 55, 0.85);
   --text-85-color: rgba(255, 255, 255, 0.85);
+  --ai-text-shadow: 0 0 0.6rem var(--primary-color);
 }
 
 body {
