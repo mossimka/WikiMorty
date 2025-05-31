@@ -70,7 +70,7 @@
           </div>
 
           <div *ngIf="!descriptionLoading && !descriptionError && description">
-            <p class="ai-description-text">{{ description }}</p>
+            <app-typing class="ai-description-text" [text]="description"></app-typing>
             <ul>
               <li *ngFor="let tag of tags">
                 <i><span class="tag">{{ tag }}</span></i><br>

@@ -52,4 +52,10 @@ export class CharactersService {
   getCharacterDescription(id: number): Observable<CharacterDescriptionResponse> {
     return this.http.get<CharacterDescriptionResponse>(`${this.charactersApiUrl}/${id}/description`);
   }
+
+  getCharacterImage(id: number): Observable<string> {
+    return this.http.get<Character>(`${this.charactersApiUrl}/${id}`).pipe(
+      map(character => character.image)
+    );
+  }
 }

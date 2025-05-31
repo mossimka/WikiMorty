@@ -1,0 +1,16 @@
+.typing-div{
+    min-width: 52vw;
+}
+
+.typing-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+  color: var(--primary-color);
+  margin-left: 5px;
+}

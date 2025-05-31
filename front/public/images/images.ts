@@ -12,4 +12,5 @@ export const images = {
   arrow: 'images/arrow.png',
   backAi: 'images/computer.jpg',
   ide: 'images/IDE.png',
+  gif: 'images/neon.gif',
 };

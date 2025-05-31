@@ -11,11 +11,12 @@ import {PageButtonComponent} from '../../page-button/page-button.component';
 import {images} from '../../../../public/images/images';
 import {FormatEpisodePipe} from '../../format-episode.pipe';
 import {PhotoViewerComponent} from '../../photo-viewer/photo-viewer.component';
+import { TypingComponent } from "../../typing/typing.component";
 
 @Component({
   selector: 'app-character-details',
   standalone: true,
-  imports: [CommonModule, RouterLink, DatePipe, PageButtonComponent, FormatEpisodePipe, PhotoViewerComponent],
+  imports: [CommonModule, RouterLink, DatePipe, PageButtonComponent, FormatEpisodePipe, PhotoViewerComponent, TypingComponent],
   templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.css']
 })

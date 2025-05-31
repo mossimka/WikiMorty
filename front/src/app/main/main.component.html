@@ -27,9 +27,10 @@
 </section>
 
 <section class="ai">
-  <div>
+  <div class="ai-header">
     <img class="ai-logo" [src]="images.ide" alt="I.D.E.">
     <h2><span>AI Generated Descriptions with I.D.E.</span></h2>
+    <img class="neon" [src]="images.gif" alt="neon">
   </div>
 
   <div>
@@ -45,12 +46,26 @@
   </div>
 
   <div class="ai-generated">
-  <div  *ngIf="!descriptionLoading && !descriptionError && description" >
-    <p class="ai-description-text">{{ description }}</p>
-    <ul>
-      <li *ngFor="let tag of tags">
-        <i><span class="tag">{{ tag }}</span></i><br>
-      </li>
-    </ul>
-  </div></div>
+    <div  *ngIf="!descriptionLoading && !descriptionError && description">
+      <div class="ai-character-info">
+        <img [src]="characterImage" (click)="openPhoto(characterImage)" class="ai-character-image">
+
+        <app-photo-viewer *ngIf="selectedPhotoUrl" [photo]="characterImage" (close)="closePhoto()"></app-photo-viewer>
+        <app-typing *ngIf="description && !descriptionLoading" [text]="description"></app-typing>
+      </div>
+      <ul>
+        <li *ngFor="let tag of tags">
+          <i><span class="tag">{{ tag }}</span></i><br>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="descriptionLoading">
+      <p>Generating decription...</p>
+    </div>
+
+    <div *ngIf="!descriptionLoading && !description">
+      <p>Waiting for your click!</p>
+    </div>
+  </div>
 </section>
