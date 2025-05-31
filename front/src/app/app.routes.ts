@@ -11,36 +11,36 @@ export const routes: Routes = [
   {
         path: '',
         component: MainComponent,
-        title: 'Home Page'
+        title: 'Home Page | Wiki & Morty'
     },
     {
       path: 'characters',
       component: CharactersListComponent,
-      title: 'Characters Page'
+      title: 'Characters Page | Wiki & Morty'
     },
     {
       path: 'characters/:id',
       component: CharacterDetailsComponent,
-      title: 'Character Details Page'
+      title: 'Character Details Page | Wiki & Morty'
     },
     {
       path: 'episodes',
       component: EpisodesListComponent,
-      title: 'Episodes Page'
+      title: 'Episodes Page | Wiki & Morty'
     },
     {
       path: 'episodes/:id',
       component: EpisodeDetailsComponent,
-      title: 'Episode Details Page'
+      title: 'Episode Details Page | Wiki & Morty'
     },
     {
       path: 'locations',
       component: LocationsListComponent,
-      title: 'Locations Page'
+      title: 'Locations Page | Wiki & Morty'
     },
     {
       path: 'locations/:id',
       component: LocationDetailsComponent,
-      title: 'Location Details Page'
+      title: 'Location Details Page | Wiki & Morty'
     },
 ];
